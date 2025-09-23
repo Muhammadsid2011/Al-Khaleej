@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="icon" type="image/png" href="images/updated-logo.png">
 </head>
 <body>
     <!-- Top Header -->
@@ -29,7 +29,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a href="/">
-                    <img src="images/logo.jpg" alt="Al Khaleej Claims & Debt Recovery" class="logo">
+                    <img src="images/updated-logo.png" alt="Al Khaleej Claims & Debt Recovery" class="logo">
                 </a>
             </div>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -42,7 +42,6 @@
             </label>
             <ul class="navbar-nav">
                 <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/about" class="nav-link">About Us</a></li>
                 <li><a href="/services" class="nav-link">Our Services</a></li>
                 <li><a href="/reviews" class="nav-link">Reviews</a></li>
                 <li><a href="/faq" class="nav-link">FAQ</a></li>
@@ -54,6 +53,10 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="videos/video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Al Khaleej Claim Services</h1>
@@ -66,6 +69,68 @@
 
     <!-- Main Content -->
     <main id="main-content">
+        <!-- About Section -->
+        <section class="about-page" id="about">
+            <div class="container">
+                <div class="about-header">
+                    <h2 class="section-title">About Al Khaleej Claim Services</h2>
+                    <p class="page-intro">
+                        Your trusted partner in professional debt recovery and legal solutions. We bring over 18 years of expertise in helping businesses and individuals resolve their financial matters with integrity and efficiency.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>To provide our clients with the most effective and ethical debt recovery services available. We strive to maximize recovery rates while maintaining the highest standards of professionalism and preserving our clients' reputations.</p>
+                        <p>Our commitment to excellence drives us to continuously innovate and improve our services, ensuring the best possible outcomes for our clients while maintaining the highest ethical standards in the industry.</p>
+                    </div>
+                    <div class="about-image">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#FFD700" d="M100,20 L180,90 L140,180 L60,180 L20,90 Z" opacity="0.2"/>
+                            <circle cx="100" cy="85" r="35" fill="#FFD700" opacity="0.3"/>
+                            <path fill="none" stroke="#FFD700" stroke-width="4" d="M70,120 C70,150 130,150 130,120"/>
+                            <text x="100" y="90" text-anchor="middle" fill="#333" font-size="12">MISSION</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="about-section reverse">
+                    <div class="about-text">
+                        <h2>Our Vision</h2>
+                        <p>To be the leading debt collection and legal services firm in the UAE, recognized for our unwavering commitment to client success, innovation, and ethical practices. We aim to set new industry standards for excellence and reliability.</p>
+                        <p>We envision a future where businesses can operate with confidence, knowing that their financial interests are protected by our professional expertise and dedication to results.</p>
+                    </div>
+                    <div class="about-image">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#FFD700" d="M20,60 L100,20 L180,60 L180,140 L100,180 L20,140 Z" opacity="0.2"/>
+                            <circle cx="100" cy="100" r="30" fill="#FFD700" opacity="0.3"/>
+                            <path fill="none" stroke="#FFD700" stroke-width="4" d="M85,100 L115,100 M100,85 L100,115"/>
+                            <text x="100" y="145" text-anchor="middle" fill="#333" font-size="12">VISION</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="about-section values-section">
+                    <div class="about-text">
+                        <h2>Our Values</h2>
+                        <p>Our core values shape everything we do at Al Khaleej Claim Services. We believe in:</p>
+                        <ul>
+                            <li>Integrity in all our dealings</li>
+                            <li>Professional excellence and continuous improvement</li>
+                            <li>Transparent communication with clients</li>
+                            <li>Ethical debt collection practices</li>
+                            <li>Innovation in our approaches and solutions</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://www.macfound.org/media/promo_key_images/macarthur-values-graphic-900.jpg" alt="Our Values - Professional Handshake">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
         <section class="features">
             <div class="container">
                 <h2 class="section-title">Why Choose Us?</h2>
@@ -94,6 +159,30 @@
                 </div>
             </div>
         </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Meet Our Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/debt.jpeg" alt="Ahmed Al-Mansoori">
+                        <h3>Ahmed Al-Mansoori</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/debt2.png" alt="Fatima Al-Hashimi">
+                        <h3>Fatima Al-Hashimi</h3>
+                        <p>Head of Legal</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/debt3.jpeg" alt="Yusuf Khan">
+                        <h3>Yusuf Khan</h3>
+                        <p>Lead Collection Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -102,7 +191,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="images/logo.jpg" alt="Al Khaleej Claim Services">
+                        <img src="images/updated-logo.png" alt="Al Khaleej Claim Services">
                         <div class="rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>

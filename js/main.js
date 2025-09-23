@@ -5,7 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeNewsletterForm();
     initializeForms();
     initializeAnimations();
+    initializeAccordions();
 });
+
+function initializeAccordions() {
+    // Handle both FAQ and Review items
+    const accordionItems = document.querySelectorAll('.faq-item, .review-item');
+    
+    accordionItems.forEach(item => {
+        const trigger = item.querySelector('.faq-question, .review-header');
+        
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            accordionItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
 
 function initializeNavigation() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');

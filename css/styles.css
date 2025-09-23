@@ -1,20 +1,21 @@
 /* Global Styles */
 :root {
     --primary-dark: #1c2135;
-    --secondary-dark: #0c1222;
-    --tertiary-dark: #22273b;
-    --background-dark: #0d1323;
-    --surface-dark: #1d2236;
-    --accent-dark: #21263a;
+    --secondary-dark: #1d2236;
+    --tertiary-dark: #f5f7fa;
+    --background-dark: #F2EAD3;
+    --accent-dark: #ffffff;
     --hover-dark: #1f2438;
     --active-dark: #1b2034;
+    --card-bg-color: #2c2c2c;
+    --card-bg-color-reviews: #2c2c2c;
     --white: #ffffff;
     --gold: #d4af37;
     --gold-light: rgba(212, 175, 55, 0.1);
     --gold-medium: rgba(212, 175, 55, 0.2);
-    --gray-light: rgba(255, 255, 255, 0.1);
-    --gray-medium: rgba(255, 255, 255, 0.15);
-    --gray-dark: rgba(255, 255, 255, 0.2);
+    --gray-light: rgba(0, 0, 0, 0.1);
+    --gray-medium: rgba(0, 0, 0, 0.15);
+    --gray-dark: rgba(0, 0, 0, 0.2);
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -30,7 +31,7 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: var(--white);
+    color: var(--primary-dark);
     background-color: var(--background-dark);
 }
 
@@ -52,6 +53,7 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
+    color: var(--white);
 }
 
 .contact-info span {
@@ -66,8 +68,8 @@ body {
 
 /* Navigation */
 .navbar {
-    background: var(--surface-dark);
-    padding: 15px 0;
+    background: var(--secondary-dark);
+    padding: 2px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -86,7 +88,7 @@ body {
 }
 
 .logo {
-    height: 60px;
+    height: 110px;
     width: auto;
 }
 
@@ -160,12 +162,31 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(28, 33, 53, 0.95), rgba(12, 18, 34, 0.95)),
-                url('../images/hero-bg.jpg') center/cover;
     padding: 140px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background-color: transparent;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero::before {
@@ -181,7 +202,7 @@ body {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
@@ -192,7 +213,7 @@ body {
     font-weight: 800;
     margin-bottom: 25px;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--white), var(--gold));
+    background: var(--gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fadeInUp 1s ease-out;
@@ -255,31 +276,37 @@ body {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 50px;
-    color: var(--white);
+    color: var(--primary-dark);
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .feature-card {
-    background: var(--surface-dark);
+    background: var(--card-bg-color);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gold);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 .feature-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--accent-dark);
+    width: 60px;
+    height: 60px;
+    background: var(--card-bg-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -287,22 +314,29 @@ body {
     margin: 0 auto 20px;
     color: var(--gold);
     font-size: 1.8rem;
+    border: 2px solid var(--gold);
+    transition: all 0.3s ease;
 }
 
 .feature-card h3 {
     color: var(--gold);
     margin-bottom: 15px;
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .feature-card p {
     color: var(--white);
-    opacity: 0.8;
+    opacity: 0.9;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
 }
 
 /* Footer */
 .footer {
     background: var(--secondary-dark);
+    color: var(--white);
     padding: 60px 0 20px;
 }
 
@@ -320,7 +354,7 @@ body {
 }
 
 .footer-logo img {
-    height: 80px;
+    height: 110px;
     margin-bottom: 15px;
 }
 
@@ -383,7 +417,7 @@ body {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--accent-dark);
+    background: var(--hover-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -406,7 +440,7 @@ body {
 /* FAQ Styles */
 .faq-page {
     padding: 80px 0;
-    background: linear-gradient(to bottom, var(--background-dark), var(--surface-dark));
+    background: var(--background-dark);
 }
 
 .faq-grid {
@@ -416,13 +450,13 @@ body {
 }
 
 .faq-item {
-    background: var(--surface-dark);
+    background: var(--card-bg-color);
     border-radius: 10px;
     margin-bottom: 20px;
     overflow: hidden;
-    border: 1px solid var(--accent-dark);
+    border: 1px solid var(--gold);
     transition: var(--transition-base);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .faq-item:hover {
@@ -433,56 +467,59 @@ body {
 
 .faq-question {
     padding: 20px 25px;
-    background: var(--accent-dark);
+    background: var(--card-bg-color);
     cursor: pointer;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: var(--transition-base);
-    color: var(--white);
+    color: var(--gold);
 }
 
 .faq-question i {
     color: var(--gold);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .faq-item.active .faq-question {
-    background: var(--gold);
-    color: var(--primary-dark);
+    border-bottom: none;
 }
 
 .faq-item.active .faq-question i {
     transform: rotate(45deg);
-    color: var(--primary-dark);
+    color: var(--gold);
 }
 
 .faq-answer {
     padding: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    background: var(--surface-dark);
+    transition: all 0.5s ease;
+    background: var(--card-bg-color);
     line-height: 1.8;
     opacity: 0;
+    transform: translateY(-10px);
 }
 
 .faq-item.active .faq-answer {
-    padding: 25px;
+    padding: 30px;
     max-height: 1000px;
     opacity: 1;
+    color: var(--white);
+    border-top: 1px solid var(--gold);
+    transform: translateY(0);
 }
 
 /* Reviews Accordion Styles */
 .review-item {
-    background: var(--surface-dark);
-    border-radius: 15px;
+    background: var(--card-bg-color);
+    border-radius: 10px;
     margin-bottom: 20px;
     overflow: hidden;
-    border: 1px solid var(--accent-dark);
+    border: 1px solid var(--gold);
     transition: var(--transition-base);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .review-item:hover {
@@ -493,7 +530,7 @@ body {
 
 .review-header {
     padding: 20px 25px;
-    background: var(--accent-dark);
+    background-color: var(--card-bg-color);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -520,6 +557,7 @@ body {
     font-size: 1.1rem;
     margin-bottom: 5px;
     color: var(--gold);
+    font-weight: 600;
 }
 
 .reviewer-info .rating {
@@ -533,13 +571,13 @@ body {
 }
 
 .review-item.active .review-header {
-    background: var(--gold);
+    border-bottom: 1px solid var(--gold);
 }
 
 .review-item.active .reviewer-info h3,
 .review-item.active .rating,
 .review-item.active .review-toggle {
-    color: var(--primary-dark);
+    color: var(--gold);
 }
 
 .review-item.active .review-toggle {
@@ -551,7 +589,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    background: var(--surface-dark);
+    background: var(--card-bg-color);
     line-height: 1.8;
     opacity: 0;
 }
@@ -577,7 +615,7 @@ body {
 /* About Page Styles */
 .about-page {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--background-dark), var(--surface-dark));
+    background: var(--background-dark);
 }
 
 .about-header {
@@ -591,16 +629,59 @@ body {
     gap: 50px;
     align-items: center;
     margin-bottom: 80px;
-    background: var(--surface-dark);
+    background: var(--card-bg-color);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--gold-light);
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--gold);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, var(--gold-light) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-section:hover::before {
+    opacity: 1;
+}
+
+.values-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    color: white;
+}
+
+.values-section ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.values-section ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: var(--gold-light);
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    line-height: 1;
 }
 
 .about-section:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 .about-section.reverse {
@@ -632,8 +713,8 @@ body {
 .about-text p {
     color: var(--white);
     opacity: 0.9;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
     margin-bottom: 20px;
 }
 
@@ -669,6 +750,7 @@ body {
 
 .team-section {
     margin-top: 80px;
+    padding-bottom: 100px;
 }
 
 .team-grid {
@@ -679,17 +761,18 @@ body {
 }
 
 .team-member {
-    background: var(--surface-dark);
-    border-radius: 15px;
+    background: var(--card-bg-color);
+    border-radius: 10px;
     overflow: hidden;
-    border: 1px solid var(--accent-dark);
-    transition: transform 0.3s ease;
+    border: 1px solid var(--gold);
+    transition: all 0.3s ease;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .team-member:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 .team-member img {
@@ -706,15 +789,28 @@ body {
 
 .team-member p {
     color: var(--white);
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    padding: 0 15px;
 }
 
 /* Responsive Design */
+@media screen and (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 20px auto;
     }
 
     .contact-info {
@@ -853,7 +949,7 @@ body {
 /* Services Page Styles */
 .services-page {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--background-dark), var(--surface-dark));
+    background: var(--background-dark);
 }
 
 .services-header {
@@ -868,22 +964,26 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     margin-top: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .service-card {
-    background: var(--surface-dark);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: left;
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid var(--accent-dark);
+    border: 1px solid var(--gold);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .service-card::before {
@@ -900,9 +1000,8 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 .service-card:hover::before {
@@ -910,18 +1009,18 @@ body {
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--accent-dark);
+    width: 60px;
+    height: 60px;
+    background: var(--card-bg-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
+    margin: 0 auto 20px;
     font-size: 2rem;
     color: var(--gold);
-    transition: all 0.3s ease;
-    border: 2px solid var(--gold-light);
+    transition: all 0.8s ease;
+    border: 2px solid var(--gold);
 }
 
 .service-card:hover .service-icon {
@@ -932,16 +1031,17 @@ body {
 
 .service-card h3 {
     color: var(--gold);
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 .service-card p {
     color: var(--white);
     opacity: 0.9;
-    line-height: 1.8;
-    margin-bottom: 25px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
     flex-grow: 1;
 }
 
@@ -987,6 +1087,12 @@ body {
 
 .service-card:hover .service-cta i {
     transform: translateX(5px);
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1057,7 +1163,7 @@ body {
 /* Blog Page Styles */
 .blog-page {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--background-dark), var(--surface-dark));
+    background: var(--background-dark);
 }
 
 .blog-grid {
@@ -1068,10 +1174,10 @@ body {
 }
 
 .blog-card {
-    background: var(--surface-dark);
+    background: var(--secondary-dark);
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid var(--accent-dark);
+    border: 1px solid var(--gray-light);
     transition: all 0.3s ease;
     height: 100%;
     display: flex;
@@ -1167,7 +1273,7 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 40px;
-    color: var(--white);
+    color: black;
     opacity: 0.9;
     font-size: 1.1rem;
     line-height: 1.6;
@@ -1176,7 +1282,7 @@ body {
 /* Enhanced Reviews Page Styles */
 .reviews-page {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--background-dark), var(--surface-dark));
+    background: var(--background-dark);
     min-height: calc(100vh - 200px);
 }
 
@@ -1187,11 +1293,11 @@ body {
 }
 
 .review-item {
-    background: var(--surface-dark);
+    background: var(--tertiary-dark);
     border-radius: 15px;
     margin-bottom: 25px;
     overflow: hidden;
-    border: 1px solid var(--accent-dark);
+    border: 1px solid var(--gray-light);
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -1204,7 +1310,7 @@ body {
 
 .review-header {
     padding: 25px;
-    background: var(--accent-dark);
+    background: var(--card-bg-color);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -1242,14 +1348,16 @@ body {
     padding: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease;
     opacity: 0;
+    transform: translateY(-10px);
 }
 
 .review-item.active .review-content {
     padding: 30px;
     max-height: 1000px;
     opacity: 1;
+    transform: translateY(0);
 }
 
 .review-text {
@@ -1265,12 +1373,14 @@ body {
     align-items: center;
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid var(--accent-dark);
+    border-top: 1px solid var(--gold);
     font-size: 0.9rem;
+    color: var(--white);
 }
 
 .review-date {
     color: var(--gold);
+    opacity: 0.9;
 }
 
 .review-verify {
@@ -1278,6 +1388,7 @@ body {
     align-items: center;
     gap: 8px;
     color: var(--gold);
+    opacity: 0.9;
 }
 
 .review-verify i {
@@ -1369,6 +1480,7 @@ body {
         padding: 20px 0;
         transition: 0.4s ease-in-out;
         overflow-y: auto;
+        border-top: 1px solid var(--gray-light);
     }
 
     .nav-toggle:checked ~ .navbar-nav {
@@ -1408,18 +1520,18 @@ body {
 
 /* Enhanced Contact Form Styles */
 .contact-page {
-    background: linear-gradient(135deg, var(--background-dark), var(--surface-dark));
+    background: var(--background-dark);
     position: relative;
     padding: 80px 0;
     min-height: calc(100vh - 80px);
 }
 
 .contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     margin: 40px auto;
-    max-width: 800px;
+    max-width: 1200px;
     padding: 0 20px;
 }
 
@@ -1434,20 +1546,19 @@ body {
 }
 
 .contact-form-wrapper {
-    background: var(--surface-dark);
+    background: var(--card-bg-color);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--gray-light);
-    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--gold);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
 }
 
-.contact-form-wrapper:hover {
+.contact-form-wrapper:hover,
+.contact-info-wrapper:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    border-color: var(--gold-light);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 .contact-form {
@@ -1474,10 +1585,10 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    background: var(--accent-dark);
+    background: var(--white);
     border: 2px solid var(--gray-medium);
     border-radius: 12px;
-    color: var(--white);
+    color: var(--primary-dark);
     font-size: 1.1rem;
     transition: all 0.3s ease;
     margin-top: 8px;
@@ -1492,8 +1603,8 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--gold);
-    box-shadow: 0 0 0 4px var(--gold-medium);
-    background: var(--hover-dark);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    background: var(--white);
 }
 
 .form-group textarea {
@@ -1542,11 +1653,11 @@ body {
 }
 
 .contact-info-wrapper {
-    background: var(--surface-dark);
+    background: var(--card-bg-color);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--gold);
     width: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1561,6 +1672,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    color: var(--white);
 }
 
 .contact-info-card h3 {
@@ -1602,13 +1714,14 @@ body {
     justify-content: space-between;
     padding: 15px 20px;
     border-radius: 12px;
-    background: var(--accent-dark);
+    background: var(--hover-dark);
     transition: all 0.3s ease;
     font-size: 1.1rem;
 }
 
 .business-hours p:hover {
-    background: var(--hover-dark);
+    color: black;
+    background: var(--accent-dark);
     transform: translateX(5px);
 }
 
