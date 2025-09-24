@@ -62,7 +62,7 @@
                     <div class="review-item">
                         <div class="review-header">
                             <div class="review-title">
-                                <img src="../images/reviewer1.jpg" alt="Mohammed A." class="reviewer-image">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mohammed A." class="reviewer-image">
                                 <div class="reviewer-info">
                                     <h3>Mohammed A.</h3>
                                     <div class="rating">
@@ -85,7 +85,7 @@
                     <div class="review-item">
                         <div class="review-header">
                             <div class="review-title">
-                                <img src="../images/reviewer2.jpg" alt="Sarah K." class="reviewer-image">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K." class="reviewer-image">
                                 <div class="reviewer-info">
                                     <h3>Sarah K.</h3>
                                     <div class="rating">
@@ -108,7 +108,7 @@
                     <div class="review-item">
                         <div class="review-header">
                             <div class="review-title">
-                                <img src="../images/reviewer3.jpg" alt="Ahmed R." class="reviewer-image">
+                                <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Ahmed R." class="reviewer-image">
                                 <div class="reviewer-info">
                                     <h3>Ahmed R.</h3>
                                     <div class="rating">
@@ -131,7 +131,7 @@
                     <div class="review-item">
                         <div class="review-header">
                             <div class="review-title">
-                                <img src="../images/reviewer4.jpg" alt="Fatima H." class="reviewer-image">
+                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Fatima H." class="reviewer-image">
                                 <div class="reviewer-info">
                                     <h3>Fatima H.</h3>
                                     <div class="rating">
@@ -213,27 +213,5 @@
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const reviewItems = document.querySelectorAll('.review-item');
-            
-            reviewItems.forEach(item => {
-                const header = item.querySelector('.review-header');
-                header.addEventListener('click', () => {
-                    // Close other items
-                    reviewItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.review-toggle').classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    item.classList.toggle('active');
-                    item.querySelector('.review-toggle').classList.toggle('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>

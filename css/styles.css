@@ -7,7 +7,7 @@
     --accent-dark: #ffffff;
     --hover-dark: #1f2438;
     --active-dark: #1b2034;
-    --card-bg-color: #2c2c2c;
+    --card-bg-color: rgba(44, 44, 44, 0.8);
     --card-bg-color-reviews: #2c2c2c;
     --white: #ffffff;
     --gold: #d4af37;
@@ -73,9 +73,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--accent-dark);
     box-shadow: var(--shadow-md);
     backdrop-filter: blur(10px);
+    margin-bottom: 0;
 }
 
 .navbar .container {
@@ -167,6 +167,7 @@ body {
     position: relative;
     overflow: hidden;
     background-color: transparent;
+    margin-top: 0;
 }
 
 .hero-video {
@@ -1290,6 +1291,24 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
+}
+
+.review-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    background: var(--card-bg-color);
+}
+
+.review-item.active .review-content {
+    padding: 30px;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    border-top: 1px solid var(--gold);
 }
 
 .review-item {
