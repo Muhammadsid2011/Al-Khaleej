@@ -1118,13 +1118,32 @@ body {
         font-size: 1.2rem;
     }
 
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .contact-form-wrapper,
     .contact-info-wrapper {
         padding: 25px;
+        width: 100%;
+    }
+
+    .contact-info-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .contact-form-wrapper {
-        margin-bottom: 20px;
+        min-height: 100vh;
+        margin-top: 0;
+        padding-top: 40px;
+    }
+
+    .contact-page {
+        height: auto;
+        min-height: 200vh;
     }
 
     .contact-info-card h3 {
@@ -1552,6 +1571,47 @@ body {
     margin: 40px auto;
     max-width: 1200px;
     padding: 0 20px;
+}
+
+@media (min-width: 769px) {
+    .contact-form-wrapper {
+        order: 2;
+    }
+    
+    .contact-info-wrapper {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 60px 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info-wrapper {
+        margin-bottom: -20px;
+    }
+
+    .contact-form-wrapper {
+        margin-top: 40px;
+        position: relative;
+        padding-top: 40px;
+    }
+
+    .contact-form-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        background: var(--gold-light);
+    }
 }
 
 .contact-page::before {
