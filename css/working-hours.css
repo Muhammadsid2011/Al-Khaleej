@@ -1,0 +1,187 @@
+/* Working Hours Section */
+.working-hours {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(14, 19, 35, 0.98) 0%, rgba(28, 38, 70, 0.98) 100%);
+}
+
+.working-hours .container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.working-hours-card {
+    background: rgba(19, 25, 46, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.card-header {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-header h2 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.schedule-list {
+    padding: 25px 40px;
+    background: transparent;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+}
+
+.day {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.15rem;
+    letter-spacing: 0.3px;
+}
+
+.hours {
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    font-size: 1.15rem;
+}
+
+.closed {
+    color: #ff4757;
+    font-weight: 500;
+}
+
+/* Animation for items */
+.schedule-item {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-item::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.schedule-item:hover::before {
+    left: 100%;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .working-hours .container {
+        max-width: 90%;
+        padding: 0 15px;
+    }
+    
+    .working-hours-card {
+        margin: 0 auto;
+    }
+    
+    .card-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .schedule-list {
+        padding: 20px;
+    }
+    
+    .day, .hours {
+        font-size: 1rem;
+    }
+}
+
+/* Add delay for each item */
+.schedule-item:nth-child(1) { animation-delay: 0.1s; }
+.schedule-item:nth-child(2) { animation-delay: 0.2s; }
+.schedule-item:nth-child(3) { animation-delay: 0.3s; }
+.schedule-item:nth-child(4) { animation-delay: 0.4s; }
+.schedule-item:nth-child(5) { animation-delay: 0.5s; }
+.schedule-item:nth-child(6) { animation-delay: 0.6s; }
+.schedule-item:nth-child(7) { animation-delay: 0.7s; }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .working-hours-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .working-hours-content {
+        text-align: center;
+    }
+
+    .working-hours-content h2 {
+        font-size: 2rem;
+    }
+
+    .schedule-item:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .working-hours {
+        padding: 60px 0;
+    }
+
+    .working-hours-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .schedule-item {
+        padding: 12px 0;
+    }
+
+    .day, .hours {
+        font-size: 1rem;
+    }
+}

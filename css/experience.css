@@ -1,0 +1,197 @@
+/* Experience Section Styles */
+.experience-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background: url('../images/justice-statue.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(28, 33, 53, 0.95) 30%, rgba(28, 33, 53, 0.85) 100%);
+    z-index: 1;
+}
+
+.experience-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.experience-section .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+
+.experience-content {
+    flex: 1;
+    color: var(--white);
+}
+
+.experience-text {
+    margin-bottom: 50px;
+}
+
+.experience-text .section-title {
+    color: var(--white);
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.experience-text .section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gold);
+}
+
+.experience-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--tertiary-dark);
+    max-width: 600px;
+}
+
+.experience-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 180px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number .plus {
+    font-size: 2rem;
+    margin-left: 5px;
+}
+
+.stat-label {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .experience-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .experience-text .section-title {
+        padding-left: 0;
+    }
+
+    .experience-text .section-title::before {
+        left: 50%;
+        top: -20px;
+        bottom: auto;
+        width: 100px;
+        height: 4px;
+        transform: translateX(-50%);
+    }
+
+    .experience-text p {
+        margin: 0 auto;
+    }
+
+    .experience-stats {
+        justify-content: center;
+    }
+
+    .background-image::after {
+        background: linear-gradient(0deg, var(--secondary-dark) 0%, rgba(28, 33, 53, 0.85) 100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-text .section-title {
+        font-size: 2rem;
+    }
+
+    .experience-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .justice-statue {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-section {
+        padding: 60px 0;
+    }
+
+    .experience-text .section-title {
+        font-size: 1.8rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+}
