@@ -1,0 +1,268 @@
+/* Consultation Section Styles */
+.consultation-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.consultation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.consultation-section .card-animate-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease;
+}
+
+.consultation-section .card-animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease;
+}
+
+.consultation-section .card-animate-right.animate,
+.consultation-section .card-animate-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add smooth reveal animation for content */
+.consultation-section .card-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    transition-delay: 0.3s;
+}
+
+.consultation-section .animate .card-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.consultation-card {
+    position: relative;
+    min-height: 500px;
+    border-radius: 15px;
+    perspective: 1500px;
+    background: transparent;
+}
+
+.consultation-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.consultation-card:hover .consultation-card-inner {
+    transform: rotateY(180deg);
+}
+
+.consultation-front, .consultation-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.consultation-front {
+    background: var(--card-bg-color);
+}
+
+.consultation-back {
+    background: var(--secondary-dark);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    color: #fff;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+}
+
+.card-button:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.consultation-back .card-title {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.consultation-back .card-description {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+.consultation-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    text-align: left;
+}
+
+.consultation-back ul li {
+    color: #fff;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.consultation-back ul li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Animation Classes */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .consultation-grid {
+        gap: 20px;
+    }
+    
+    .consultation-card,
+    .consultation-card-inner,
+    .consultation-front,
+    .consultation-back {
+        min-height: 450px;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .consultation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .consultation-card,
+    .consultation-card-inner,
+    .consultation-front,
+    .consultation-back {
+        min-height: 400px;
+    }
+    
+    .card-overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+    }
+    
+    .card-title {
+        font-size: 1.6rem;
+    }
+    
+    .card-description {
+        font-size: 1rem;
+    }
+
+    /* Disable flip on mobile, show front only */
+    .consultation-card-inner {
+        transform-style: flat;
+    }
+    
+    .consultation-card:hover .consultation-card-inner {
+        transform: none;
+    }
+    
+    .consultation-back {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .consultation-section {
+        padding: 60px 0;
+    }
+    
+    .consultation-card,
+    .consultation-card-inner,
+    .consultation-front,
+    .consultation-back {
+        min-height: 350px;
+    }
+    
+    .card-overlay {
+        padding: 25px;
+    }
+}
