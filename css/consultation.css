@@ -60,10 +60,6 @@
     transform-style: preserve-3d;
 }
 
-.consultation-card:hover .consultation-card-inner {
-    transform: rotateY(180deg);
-}
-
 .consultation-front, .consultation-back {
     position: absolute;
     width: 100%;
