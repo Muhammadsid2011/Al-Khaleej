@@ -3,16 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional debt collection and legal services offered by Al Khaleej Claims Services in Dubai, UAE">
     <title>Our Services - Al Khaleej Claims Services</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/services-new.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="../images/updated-logo.png">
+    <style>
+        .services-content {
+            padding: 4rem 0;
+            background: var(--background-dark);
+        }
+
+        .service-article {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            background: var(--card-bg-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gold);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .service-article:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .service-text {
+            padding: 2.5rem;
+        }
+
+        .service-title {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: #d4af37;
+        }
+
+        .feature-item i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+            color: var(--gold);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-header {
+            background: linear-gradient(to bottom, var(--gray-dark) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 1rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, var(--gold-light) 0%, transparent 50%);
+            opacity: 0.1;
+            animation: pulse 4s infinite;
+        }
+
+        .service-header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(45deg, transparent 33.33%, var(--card-bg-color) 33.33%, var(--card-bg-color) 66.66%, transparent 66.66%);
+            background-size: 60px 100px;
+            animation: moveWave 10s linear infinite;
+        }
+
+        .service-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--gold) 0%, #ffffff 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 3s infinite;
+        }
+
+        .service-header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s both;
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.2; }
+            100% { opacity: 0.1; }
+        }
+
+        @keyframes moveWave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(60px); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .service-image {
+                height: 300px;
+            }
+
+            .service-title {
+                font-size: 1.7rem;
+            }
+
+            .service-description {
+                font-size: 1rem;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+
+            .service-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .service-header p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
-<body> 
+<body>
     <!-- Top Header -->
     <div class="top-header">
         <div class="container">
@@ -51,106 +274,168 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <section class="services-page">
-            <div class="container">
-                <div class="services-header">
-                    <h1 class="section-title">Our Comprehensive Services</h1>
-                    <p class="page-intro">
-                        At Al Khaleej Claims Services, we offer a full suite of debt collection and legal services designed to meet the diverse needs of our clients. Our expert team is committed to delivering results with professionalism and integrity.
-                    </p>
-                </div>
-                <div class="services-container">
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                            </div>
-                            <h3>Debt Collection</h3>
-                            <p>Professional debt collection services for businesses and individuals. We handle both domestic and international debt recovery with a high success rate.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Domestic & International Recovery</li>
-                                <li><i class="fas fa-check-circle"></i> Business & Consumer Debt</li>
-                                <li><i class="fas fa-check-circle"></i> Customized Collection Strategies</li>
-                            </ul>
-                            <a href="/contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
+    <!-- Services Header -->
+    <div class="service-header">
+        <h1>Our Comprehensive Services</h1>
+        <p>Professional debt collection and legal services tailored to your needs. We combine expertise with ethics to deliver outstanding results.</p>
+    </div>
 
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <h3>Legal Services</h3>
-                            <p>Comprehensive legal support including documentation, court representation, and legal consultation for debt-related matters.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Court Representation</li>
-                                <li><i class="fas fa-check-circle"></i> Legal Documentation</li>
-                                <li><i class="fas fa-check-circle"></i> Expert Consultation</li>
-                            </ul>
-                            <a href="/contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+    <!-- Services Content -->
+    <section class="services-content">
+        <div class="container">
+            <!-- Debt Collection Service -->
+            <article class="service-article" style="animation-delay: 0.2s;">
+                <img src="../images/debt-collection.jpg" alt="Professional Debt Collection Services" class="service-image">
+                <div class="service-text">
+                    <h2 class="service-title">Professional Debt Collection</h2>
+                    <p class="service-description">Our debt collection services are designed to help businesses and individuals recover outstanding debts efficiently and professionally. We understand the sensitivity of debt collection and approach each case with the utmost professionalism and compliance with UAE regulations.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customized Collection Strategies</span>
                         </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h3>Settlement Negotiations</h3>
-                            <p>Expert negotiation services to reach favorable settlements between parties, ensuring optimal outcomes for our clients.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Mediation Services</li>
-                                <li><i class="fas fa-check-circle"></i> Payment Plan Arrangements</li>
-                                <li><i class="fas fa-check-circle"></i> Win-Win Solutions</li>
-                            </ul>
-                            <a href="/contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional Negotiation</span>
                         </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-search-dollar"></i>
-                            </div>
-                            <h3>Skip Tracing</h3>
-                            <p>Advanced debtor location services using state-of-the-art techniques to locate debtors who have changed addresses or gone missing.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Advanced Search Technology</li>
-                                <li><i class="fas fa-check-circle"></i> Database Access</li>
-                                <li><i class="fas fa-check-circle"></i> High Success Rate</li>
-                            </ul>
-                            <a href="/contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>Credit Reporting</h3>
-                            <p>Accurate credit reporting services to help maintain proper records and assist in future credit decisions.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Accurate Documentation</li>
-                                <li><i class="fas fa-check-circle"></i> Regular Updates</li>
-                                <li><i class="fas fa-check-circle"></i> Compliance Assured</li>
-                            </ul>
-                            <a href="/contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3>Asset Investigation</h3>
-                            <p>Thorough investigation services to locate and identify assets for debt recovery purposes.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Property Search</li>
-                                <li><i class="fas fa-check-circle"></i> Business Assets</li>
-                                <li><i class="fas fa-check-circle"></i> Bank Account Location</li>
-                            </ul>
-                            <a href="/contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ethical Collection Practices</span>
                         </div>
                     </div>
+                    <a href="/contact" class="cta-button">Get Started</a>
+                </div>
+            </article>
+
+            <!-- Legal Services -->
+            <article class="service-article" style="animation-delay: 0.4s;">
+                <img src="../images/legal-services.jpeg" alt="Legal Services and Support" class="service-image">
+                <div class="service-text">
+                    <h2 class="service-title">Legal Services & Support</h2>
+                    <p class="service-description">Our experienced legal team provides comprehensive support for all aspects of debt recovery and commercial disputes. We ensure your interests are protected while maintaining compliance with UAE law.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Legal Documentation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Court Representation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Legal Consultation</span>
+                        </div>
+                    </div>
+                    <a href="/contact" class="cta-button">Learn More</a>
+                </div>
+            </article>
+
+            <!-- Corporate Recovery -->
+            <article class="service-article" style="animation-delay: 0.6s;">
+                <img src="../images/corporate-recovery.jpg" alt="Corporate Recovery Solutions" class="service-image">
+                <div class="service-text">
+                    <h2 class="service-title">Corporate Recovery Solutions</h2>
+                    <p class="service-description">Specialized solutions for businesses facing complex debt recovery challenges. Our corporate recovery team brings extensive experience in handling large-scale commercial debt recovery operations.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Strategic Recovery Planning</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Business-to-Business Collection</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Corporate Restructuring</span>
+                        </div>
+                    </div>
+                    <a href="/contact" class="cta-button">Consult Now</a>
+                </div>
+            </article>
+
+            <!-- International Recovery -->
+            <article class="service-article" style="animation-delay: 0.8s;">
+                <img src="../images/international-recovery.png" alt="International Debt Recovery" class="service-image">
+                <div class="service-text">
+                    <h2 class="service-title">International Recovery</h2>
+                    <p class="service-description">Specialized in cross-border debt collection, we leverage our global network to recover debts internationally. Our team understands the complexities of international debt recovery and ensures compliance with multiple jurisdictions.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Global Network Access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Multi-jurisdiction Expertise</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>International Compliance</span>
+                        </div>
+                    </div>
+                    <a href="/contact" class="cta-button">Get Started</a>
+                </div>
+            </article>
+
+            <!-- Loan and Credit Card Recovery -->
+            <article class="service-article" style="animation-delay: 1s;">
+                <img src="../images/loan-recovery.jpeg" alt="Loan and Credit Card Recovery" class="service-image">
+                <div class="service-text">
+                    <h2 class="service-title">Loan & Credit Card Recovery</h2>
+                    <p class="service-description">Specialized expertise in recovering outstanding loans and credit card debts. Our team employs strategic approaches to resolve these sensitive cases while maintaining professional relationships and compliance with UAE banking regulations.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Personal Loan Recovery</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Credit Card Debt Collection</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Structured Payment Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Banking Regulations Compliance</span>
+                        </div>
+                    </div>
+                    <a href="/contact" class="cta-button">Recover Now</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Assistance Section -->
+    <section class="assistance-section" style="background: var(--card-bg-color); padding: 6rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: var(--gold); font-size: 2.5rem; margin-bottom: 2rem;">We Are Here to Assist You</h2>
+            <p style="color: var(--white); max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem; line-height: 1.8;">
+                Our team of experienced professionals is ready to help you with your debt recovery needs. We understand the challenges you face and are committed to finding the best solution for your situation.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                <div style="flex: 1; min-width: 250px; max-width: 300px;">
+                    <i class="fas fa-phone-alt" style="color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Call Us Now</h3>
+                    <p style="color: var(--white);">+971 (52) 1795170</p>
+                </div>
+                <div style="flex: 1; min-width: 250px; max-width: 300px;">
+                    <i class="fas fa-envelope" style="color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Email Us</h3>
+                    <p style="color: var(--white);">info@alkhaleejclaims.com</p>
+                </div>
+                <div style="flex: 1; min-width: 250px; max-width: 300px;">
+                    <i class="fas fa-comments" style="color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Free Consultation</h3>
+                    <p style="color: var(--white);">Schedule a consultation with our experts</p>
                 </div>
             </div>
-        </section>
-    </main>
+            <a href="/contact" class="cta-button" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Contact Us Today</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -210,5 +495,24 @@
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate articles on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.service-article').forEach(article => {
+                observer.observe(article);
+            });
+        });
+    </script>
 </body>
 </html>
